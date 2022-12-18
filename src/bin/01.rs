@@ -1,11 +1,10 @@
 pub fn part_one(input: &str) -> Option<u32> {
     return input
-        .trim()
         .split("\n\n")
         .map(|elf_calories| {
             elf_calories
                 .lines()
-                .map(|calories| calories.trim().parse::<u32>().unwrap())
+                .map(|calories| calories.parse::<u32>().unwrap())
                 .sum::<u32>()
         })
         .max();
@@ -13,12 +12,11 @@ pub fn part_one(input: &str) -> Option<u32> {
 
 pub fn part_two(input: &str) -> Option<u32> {
     let mut elves_calories: Vec<u32> = input
-        .trim()
         .split("\n\n")
         .map(|elf_calories| {
             elf_calories
                 .lines()
-                .map(|calories| calories.trim().parse::<u32>().unwrap())
+                .map(|calories| calories.parse::<u32>().unwrap())
                 .sum::<u32>()
         })
         .collect();

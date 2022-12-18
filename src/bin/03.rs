@@ -3,9 +3,7 @@ pub fn part_one(input: &str) -> Option<u32> {
 
     return Some(
         input
-            .trim()
             .lines()
-            .map(|line| line.trim())
             .map(|line| line.split_at(line.len() / 2))
             .map(|(a, b)| {
                 a.chars()
@@ -22,9 +20,7 @@ pub fn part_two(input: &str) -> Option<u32> {
 
     return Some(
         input
-            .trim()
             .lines()
-            .map(|line| line.trim())
             .collect::<Vec<&str>>()
             .chunks(3)
             .map(|chunk| {
