@@ -6,7 +6,7 @@ pub fn part_one(input: &str) -> Option<u32> {
                 "A X" => 4,
                 "A Y" => 8,
                 "A Z" => 3,
-                "B X" => 1 ,
+                "B X" => 1,
                 "B Y" => 5,
                 "B Z" => 9,
                 "C X" => 7,

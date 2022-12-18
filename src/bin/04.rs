@@ -7,13 +7,7 @@ pub fn part_one(input: &str) -> Option<u32> {
                     .map(|number| number.parse::<u32>().unwrap())
                     .collect::<Vec<u32>>()
             })
-            .map(|s| {
-                if (s[0] <= s[2] && s[1] >= s[3]) || (s[2] <= s[0] && s[3] >= s[1]) {
-                    1
-                } else {
-                    0
-                }
-            })
+            .map(|s| u32::from((s[0] <= s[2] && s[1] >= s[3]) || (s[2] <= s[0] && s[3] >= s[1])))
             .sum::<u32>(),
     )
 }
@@ -27,12 +21,7 @@ pub fn part_two(input: &str) -> Option<u32> {
                     .map(|number| number.parse::<u32>().unwrap())
                     .collect::<Vec<u32>>()
             })
-            .map(|s| {
-                if (s[0] <= s[3] && s[1] >= s[2]) || (s[3] <= s[0] && s[2] >= s[1]) {
-                    return 1;
-                };
-                0
-            })
+            .map(|s| u32::from((s[0] <= s[3] && s[1] >= s[2]) || (s[3] <= s[0] && s[2] >= s[1])))
             .sum::<u32>(),
     )
 }
