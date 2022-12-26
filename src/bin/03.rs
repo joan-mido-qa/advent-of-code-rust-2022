@@ -1,6 +1,4 @@
 pub fn part_one(input: &str) -> Option<u32> {
-    let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
     return Some(
         input
             .lines()
@@ -10,14 +8,17 @@ pub fn part_one(input: &str) -> Option<u32> {
                     .nth(a.find(|char| b.contains(char)).unwrap())
                     .unwrap()
             })
-            .map(|letter| (letters.find(letter).unwrap() + 1) as u32)
+            .map(|letter| {
+                ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    .find(letter)
+                    .unwrap()
+                    + 1) as u32
+            })
             .sum(),
     );
 }
 
 pub fn part_two(input: &str) -> Option<u32> {
-    let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
     return Some(
         input
             .lines()
@@ -33,7 +34,12 @@ pub fn part_two(input: &str) -> Option<u32> {
                     )
                     .unwrap()
             })
-            .map(|letter| (letters.find(letter).unwrap() + 1) as u32)
+            .map(|letter| {
+                ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    .find(letter)
+                    .unwrap()
+                    + 1) as u32
+            })
             .sum(),
     );
 }
