@@ -19,7 +19,7 @@ pub fn part_one(input: &str) -> Option<u64> {
                     .trim()
                     .strip_prefix("Starting items: ")
                     .unwrap()
-                    .split(",")
+                    .split(',')
                     .map(|item| item.trim().parse::<u64>().unwrap())
                     .collect::<Vec<u64>>(),
                 operation: m[2]
@@ -62,7 +62,7 @@ pub fn part_one(input: &str) -> Option<u64> {
 
                 let operation = monkey.operation.replace("old", &item.to_string());
 
-                let op = operation.trim().split(" ").collect::<Vec<&str>>();
+                let op = operation.trim().split(' ').collect::<Vec<&str>>();
 
                 let new = match op[1] {
                     "+" => (op[0].parse::<u64>().unwrap() + op[2].parse::<u64>().unwrap()) / 3 % mo,
@@ -97,7 +97,7 @@ pub fn part_two(input: &str) -> Option<u64> {
                     .trim()
                     .strip_prefix("Starting items: ")
                     .unwrap()
-                    .split(",")
+                    .split(',')
                     .map(|item| item.trim().parse::<u64>().unwrap())
                     .collect::<Vec<u64>>(),
                 operation: m[2]
@@ -140,7 +140,7 @@ pub fn part_two(input: &str) -> Option<u64> {
 
                 let operation = monkey.operation.replace("old", &item.to_string());
 
-                let op = operation.trim().split(" ").collect::<Vec<&str>>();
+                let op = operation.trim().split(' ').collect::<Vec<&str>>();
 
                 let new = match op[1] {
                     "+" => (op[0].parse::<u64>().unwrap() + op[2].parse::<u64>().unwrap()) % mo,
